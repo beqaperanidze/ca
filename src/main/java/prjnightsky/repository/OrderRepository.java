@@ -1,7 +1,7 @@
-package repository;
+package prjnightsky.repository;
 
-import entity.Order;
-import entity.User;
+import prjnightsky.entity.Order;
+import prjnightsky.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

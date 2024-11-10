@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan("entity")
+@EntityScan("prjnightsky/entity")
 public class PrjNightSkyApplication {
 
     public static void main(String[] args) {

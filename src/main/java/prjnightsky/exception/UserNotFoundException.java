@@ -1,4 +1,4 @@
-package exception;
+package prjnightsky.exception;
 
 public class UserNotFoundException extends Throwable {
     private static final String DEFAULT_MESSAGE = "User with this ID does not exist";

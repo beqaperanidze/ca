@@ -1,4 +1,4 @@
-package exception;
+package prjnightsky.exception;
 
 public class StarMapNotFoundException extends Throwable {
     private static final String DEFAULT_MESSAGE = "Star map with this ID does not exist";

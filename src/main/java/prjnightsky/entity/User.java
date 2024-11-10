@@ -1,4 +1,4 @@
-package entity;
+package prjnightsky.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

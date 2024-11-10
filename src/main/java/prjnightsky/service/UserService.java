@@ -1,12 +1,12 @@
-package service;
+package prjnightsky.service;
 
-import entity.User;
-import exception.UserAlreadyExistsException;
-import exception.UserNotFoundException;
+import prjnightsky.entity.User;
+import prjnightsky.exception.UserAlreadyExistsException;
+import prjnightsky.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
+import prjnightsky.repository.UserRepository;
 
 import java.util.Optional;
 

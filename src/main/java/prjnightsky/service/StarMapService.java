@@ -1,13 +1,13 @@
-package service;
+package prjnightsky.service;
 
-import entity.StarMap;
-import entity.User;
-import exception.StarMapNotFoundException;
-import exception.UserNotFoundException;
+import prjnightsky.entity.StarMap;
+import prjnightsky.entity.User;
+import prjnightsky.exception.StarMapNotFoundException;
+import prjnightsky.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.StarMapRepository;
-import repository.UserRepository;
+import prjnightsky.repository.StarMapRepository;
+import prjnightsky.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
