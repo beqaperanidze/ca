@@ -26,6 +26,10 @@ public class StarMap {
     private boolean showLabels;
     private String customMessage;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     public StarMap() {
     }
 }
