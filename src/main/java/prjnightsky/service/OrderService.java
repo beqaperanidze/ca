@@ -42,12 +42,14 @@ public class OrderService {
         return orderRepository.save(orderData);
     }
 
+    public List<Order> getAllOrders() { return orderRepository.findAll(); }
+
     public Optional<Order> getOrder(Long id) {
         return orderRepository.findById(id);
     }
 
-    public List<Order> getOrdersByUser(User user) {
-        return orderRepository.findByUser(user);
+    public List<Order> getOrdersByUser(Long userId) {
+        return orderRepository.findByUser(userId);
     }
 
     public Order updateOrder(Long id, Order updatedOrder) throws OrderNotFoundException, StarMapNotFoundException, UserNotFoundException {

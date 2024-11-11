@@ -39,12 +39,16 @@ public class StarMapService {
         return starMapRepository.save(newStarMap);
     }
 
+    public List<StarMap> getAllStarMaps() {
+        return starMapRepository.findAll();
+    }
+
     public Optional<StarMap> getStarMapById(Long id) {
         return starMapRepository.findById(id);
     }
 
-    public List<StarMap> getStarMapByUser(User user) {
-        return starMapRepository.findByUser(user);
+    public List<StarMap> getStarMapByUser(Long userId) {
+        return starMapRepository.findByUser(userId);
     }
 
     public StarMap updateStarMap(Long id, StarMap newStarMap) throws StarMapNotFoundException {
@@ -68,7 +72,7 @@ public class StarMapService {
 
     public void deleteStarMap(Long id) throws StarMapNotFoundException {
         Optional<StarMap> starMap = starMapRepository.findById(id);
-        if(starMap.isEmpty()){
+        if (starMap.isEmpty()) {
             throw new StarMapNotFoundException();
         }
         starMapRepository.deleteById(id);
