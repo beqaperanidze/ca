@@ -49,7 +49,7 @@ public class OrderService {
     }
 
     public List<Order> getOrdersByUser(Long userId) {
-        return orderRepository.findByUser(userId);
+        return orderRepository.findByUser_Id(userId);
     }
 
     public Order updateOrder(Long id, Order updatedOrder) throws OrderNotFoundException, StarMapNotFoundException, UserNotFoundException {

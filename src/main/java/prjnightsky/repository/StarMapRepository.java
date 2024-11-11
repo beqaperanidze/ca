@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface StarMapRepository extends JpaRepository<StarMap, Long> {
-    List<StarMap> findByUser(Long user);
+    List<StarMap> findByUser_Id(Long userId);
 }

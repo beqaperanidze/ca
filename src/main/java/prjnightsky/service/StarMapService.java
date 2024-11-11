@@ -48,7 +48,7 @@ public class StarMapService {
     }
 
     public List<StarMap> getStarMapByUser(Long userId) {
-        return starMapRepository.findByUser(userId);
+        return starMapRepository.findByUser_Id(userId);
     }
 
     public StarMap updateStarMap(Long id, StarMap newStarMap) throws StarMapNotFoundException {

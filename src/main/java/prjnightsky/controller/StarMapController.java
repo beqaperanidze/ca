@@ -12,7 +12,7 @@ import prjnightsky.service.StarMapService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/starmap")
+@RequestMapping("/star-maps")
 public class StarMapController {
     private final StarMapService starMapService;
 

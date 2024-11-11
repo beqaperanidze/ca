@@ -1,5 +1,6 @@
 package prjnightsky.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import prjnightsky.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
     private final UserService userService;
 
@@ -28,27 +29,38 @@ public class UserController {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<User>> findAll() {
         List<User> users = userService.findAll();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @GetMapping("/findById/{id}")
+    @PreAuthorize("hasRole('ADMIN') or @userService.isCurrentUser(#id)")
     public ResponseEntity<User> findById(@PathVariable Long id) {
-        return userService.findById(id).map(user -> new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return userService.findById(id)
+                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/findByEmail/{email}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<User> findByEmail(@PathVariable String email) {
-        return userService.findByEmail(email).map(user -> new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return userService.findByEmail(email)
+                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/findByUsername/{username}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<User> findByUsername(@PathVariable String username) {
-        return userService.findByUsername(username).map(user -> new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return userService.findByUsername(username)
+                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PutMapping("/update/{id}")
+    @PreAuthorize("hasRole('ADMIN') or @userService.isCurrentUser(#id)")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User newUser) {
         try {
             userService.updateUser(id, newUser);
@@ -59,6 +71,7 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<User> deleteUser(@PathVariable Long id) {
         try {
             userService.deleteUser(id);

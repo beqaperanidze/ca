@@ -1,6 +1,11 @@
 package prjnightsky.service;
 
-import org.springframework.http.ResponseEntity;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import prjnightsky.entity.Role;
 import prjnightsky.entity.User;
 import prjnightsky.exception.UserAlreadyExistsException;
 import prjnightsky.exception.UserNotFoundException;
@@ -13,41 +18,30 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
+    public boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
     }
 
     public User registerUser(User user) {
-        if (user.getUsername() == null || user.getUsername().trim().isEmpty()) {
-            throw new IllegalArgumentException("Username cannot be empty");
-        }
-        if (user.getEmail() == null || user.getEmail().trim().isEmpty()) {
-            throw new IllegalArgumentException("Email cannot be empty");
-        }
-        if (user.getPassword() == null || user.getPassword().trim().isEmpty()) {
-            throw new IllegalArgumentException("Password cannot be empty");
+        // Check if username already exists
+        if (existsByUsername(user.getUsername())) {
+            throw new IllegalStateException("Username already exists");
         }
 
-        if (userRepository.existsByUsername(user.getUsername())) {
-            throw new UserAlreadyExistsException("Username already exists");
-        }
-        if (userRepository.existsByEmail(user.getEmail())) {
-            throw new UserAlreadyExistsException("Email already exists");
-        }
-
+        // Encode password
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        // Set default role if not set
+        if (user.getRole() == null) {
+            user.setRole(Role.USER);
+        }
+
         return userRepository.save(user);
-    }
-
-
-    public List<User> findAll() {
-        return userRepository.findAll();
     }
 
     public Optional<User> findById(Long id) {
@@ -62,33 +56,51 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public User updateUser(Long id, User user) throws UserNotFoundException {
-        Optional<User> userOpt = userRepository.findById(id);
-        if (userOpt.isEmpty()) {
-            throw new UserNotFoundException();
-        }
-
-        User currentUser = userOpt.get();
-
-        if (user.getUsername() != null && !user.getUsername().isBlank()) {
-            currentUser.setUsername(user.getUsername());
-        }
-        if (user.getEmail() != null && !user.getEmail().isBlank()) {
-            currentUser.setEmail(user.getEmail());
-        }
-        if (user.getPassword() != null && !user.getPassword().isBlank()) {
-            currentUser.setPassword(passwordEncoder.encode(user.getPassword()));
-        }
-
-        return userRepository.save(currentUser);
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     public void deleteUser(Long id) throws UserNotFoundException {
-        Optional<User> userOpt = userRepository.findById(id);
-        if (userOpt.isEmpty()) {
-            throw new UserNotFoundException();
+        if (!userRepository.existsById(id)) {
+            throw new UserNotFoundException("User not found with id: " + id);
         }
         userRepository.deleteById(id);
     }
 
+    public void updateUser(Long id, User newUser) throws UserNotFoundException {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
+
+        if (newUser.getUsername() != null) {
+            user.setUsername(newUser.getUsername());
+        }
+        if (newUser.getEmail() != null) {
+            user.setEmail(newUser.getEmail());
+        }
+        if (newUser.getPassword() != null) {
+            user.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        }
+        if (newUser.getRole() != null) {
+            user.setRole(newUser.getRole());
+        }
+
+        userRepository.save(user);
+    }
+
+    public boolean isCurrentUser(Long userId) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return false;
+        }
+
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        User currentUser = findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        return currentUser.getId().equals(userId);
+    }
+
+    public User save(User user) {
+        return userRepository.save(user);
+    }
 }
