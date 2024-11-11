@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import prjnightsky.exception.UserNotFoundException;
 import prjnightsky.service.UserService;
 
-import java.util.Optional;
+import java.util.List;
 
 
 @RestController
@@ -27,29 +27,44 @@ public class UserController {
         return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<User>> findAll() {
+        List<User> users = userService.findAll();
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+
     @GetMapping("/findById/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
-        return userService.findById(id)
-                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return userService.findById(id).map(user -> new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/findByEmail/{email}")
     public ResponseEntity<User> findByEmail(@PathVariable String email) {
-        return userService.findByEmail(email)
-                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return userService.findByEmail(email).map(user -> new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @GetMapping("/findByUsername/{username}")
     public ResponseEntity<User> findByUsername(@PathVariable String username) {
-        return userService.findByUsername(username)
-                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return userService.findByUsername(username).map(user -> new ResponseEntity<>(user, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity<User> deleteUser(@PathVariable Long id) throws UserNotFoundException {
-//         User deletedUser = userService.deleteUser(id);
-//    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User newUser) {
+        try {
+            userService.updateUser(id, newUser);
+            return ResponseEntity.ok().build();
+        } catch (UserNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<User> deleteUser(@PathVariable Long id) {
+        try {
+            userService.deleteUser(id);
+            return ResponseEntity.noContent().build();
+        } catch (UserNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
