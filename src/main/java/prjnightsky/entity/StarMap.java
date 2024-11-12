@@ -1,6 +1,7 @@
 package prjnightsky.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,5 +32,19 @@ public class StarMap {
     private User user;
 
     public StarMap() {
+    }
+
+    public StarMap(String location, LocalTime time, User user, LocalDate date, String mapStyle, String colorScheme, String size, boolean showConstellations, boolean showGrid, boolean showLabels, String customMessage) {
+        this.location = location;
+        this.time = time;
+        this.user = user;
+        this.date = date;
+        this.mapStyle = mapStyle;
+        this.colorScheme = colorScheme;
+        this.size = size;
+        this.showConstellations = showConstellations;
+        this.showGrid = showGrid;
+        this.showLabels = showLabels;
+        this.customMessage = customMessage;
     }
 }

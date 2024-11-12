@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+<rect width="800" height="800" fill="#2B1B17"/>
+<circle cx="400.000000" cy="400.000000" r="300.000000" fill="none"
+        stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<circle cx="400.000000" cy="400.000000" r="240.000000" fill="none"
+        stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<circle cx="400.000000" cy="400.000000" r="180.000000" fill="none"
+        stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<circle cx="400.000000" cy="400.000000" r="120.000000" fill="none"
+        stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<circle cx="400.000000" cy="400.000000" r="60.000000" fill="none"
+        stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<circle cx="400.000000" cy="400.000000" r="0.000000" fill="none"
+        stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="400.000000" y2="40.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="580.000000" y2="88.230855"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="711.769145" y2="220.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="760.000000" y2="400.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="711.769145" y2="580.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="580.000000" y2="711.769145"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="400.000000" y2="760.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="220.000000" y2="711.769145"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="88.230855" y2="580.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="40.000000" y2="400.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="88.230855" y2="220.000000"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<line x1="400.000000" y1="400.000000" x2="220.000000" y2="88.230855"
+      stroke="#8B4513" stroke-width="0.5" stroke-dasharray="5,5"/>
+<path d="M 340.180933908625 107.09453772452093 L 328.0401025943244 88.53305077051277 L 285.75164523515485 102.94813031126853 L 286.76841086703035 121.47959879410013 L 265.9301057092853 140.44011825848492 L 220.13925297597407 171.93296608009314 L 220.13925297597407 171.93296608009314 " fill="none" stroke="#8B4513"
+      stroke-width="0.5" stroke-opacity="0.5"/>
+<circle cx="403.223558" cy="207.494139" r="2.030000" fill="#DEB887"/>
+<text x="403.223558" y="222.494139" fill="#A0522D" font-size="12" text-anchor="middle">Polaris</text>
+<circle cx="272.311085" cy="379.133982" r="3.970000" fill="#DEB887"/>
+<text x="272.311085" y="394.133982" fill="#A0522D" font-size="12" text-anchor="middle">Vega</text>
+<circle cx="299.648731" cy="520.158648" r="3.230000" fill="#DEB887"/>
+<text x="299.648731" y="535.158648" fill="#A0522D" font-size="12" text-anchor="middle">Altair</text>
+<circle cx="367.678223" cy="383.437099" r="2.750000" fill="#DEB887"/>
+<text x="367.678223" y="398.437099" fill="#A0522D" font-size="12" text-anchor="middle">Deneb</text>
+<circle cx="76.776191" cy="242.032078" r="4.050000" fill="#DEB887"/>
+<text x="76.776191" y="257.032078" fill="#A0522D" font-size="12" text-anchor="middle">Arcturus</text>
+<circle cx="593.534578" cy="165.126886" r="3.920000" fill="#DEB887"/>
+<text x="593.534578" y="180.126886" fill="#A0522D" font-size="12" text-anchor="middle">Capella</text>
+<circle cx="502.850653" cy="678.802722" r="2.840000" fill="#DEB887"/>
+<text x="502.850653" y="693.802722" fill="#A0522D" font-size="12" text-anchor="middle">Fomalhaut</text>
+<circle cx="340.185769" cy="107.088621" r="2.210000" fill="#DEB887"/>
+<text x="340.185769" y="122.088621" fill="#A0522D" font-size="12" text-anchor="middle">Dubhe</text>
+<circle cx="278.314786" cy="318.113260" r="1.760000" fill="#DEB887"/>
+<text x="278.314786" y="333.113260" fill="#A0522D" font-size="12" text-anchor="middle">Eltanin</text>
+<circle cx="417.334600" cy="526.943975" r="1.610000" fill="#DEB887"/>
+<text x="417.334600" y="541.943975" fill="#A0522D" font-size="12" text-anchor="middle">Enif</text>
+<circle cx="116.636636" cy="254.588742" r="1.630000" fill="#DEB887"/>
+<text x="116.636636" y="269.588742" fill="#A0522D" font-size="12" text-anchor="middle">Izar</text>
+<circle cx="328.612930" cy="202.064213" r="1.930000" fill="#DEB887"/>
+<text x="328.612930" y="217.064213" fill="#A0522D" font-size="12" text-anchor="middle">Kochab</text>
+<circle cx="610.112367" cy="275.071874" r="1.880000" fill="#DEB887"/>
+<text x="610.112367" y="290.071874" fill="#A0522D" font-size="12" text-anchor="middle">Algol</text>
+<circle cx="173.229697" cy="449.392740" r="1.920000" fill="#DEB887"/>
+<text x="173.229697" y="464.392740" fill="#A0522D" font-size="12" text-anchor="middle">Rasalhague</text>
+<circle cx="131.105672" cy="304.541420" r="1.770000" fill="#DEB887"/>
+<text x="131.105672" y="319.541420" fill="#A0522D" font-size="12" text-anchor="middle">Alphecca</text>
+<circle cx="350.488216" cy="401.071389" r="1.770000" fill="#DEB887"/>
+<text x="350.488216" y="416.071389" fill="#A0522D" font-size="12" text-anchor="middle">Sadr</text>
+<circle cx="730.226819" cy="406.545705" r="1.460000" fill="#DEB887"/>
+<text x="730.226819" y="421.545705" fill="#A0522D" font-size="12" text-anchor="middle">Menkar</text>
+<circle cx="226.032330" cy="652.003788" r="1.980000" fill="#DEB887"/>
+<text x="226.032330" y="667.003788" fill="#A0522D" font-size="12" text-anchor="middle">Nunki</text>
+<circle cx="220.141314" cy="171.919664" r="2.150000" fill="#DEB887"/>
+<text x="220.141314" y="186.919664" fill="#A0522D" font-size="12" text-anchor="middle">Alkaid</text>
+<circle cx="622.866197" cy="600.297393" r="1.960000" fill="#DEB887"/>
+<text x="622.866197" y="615.297393" fill="#A0522D" font-size="12" text-anchor="middle">Diphda</text>
+<circle cx="688.762921" cy="287.786641" r="1.000000" fill="#DEB887"/>
+<text x="688.762921" y="302.786641" fill="#A0522D" font-size="12" text-anchor="middle">Maia</text>
+<circle cx="688.517611" cy="289.294763" r="1.000000" fill="#DEB887"/>
+<text x="688.517611" y="304.294763" fill="#A0522D" font-size="12" text-anchor="middle">Atlas</text>
+<circle cx="193.883599" cy="679.995237" r="2.210000" fill="#DEB887"/>
+<text x="193.883599" y="694.995237" fill="#A0522D" font-size="12" text-anchor="middle">Kaus Australis</text>
+<circle cx="479.892548" cy="308.360112" r="1.720000" fill="#DEB887"/>
+<text x="479.892548" y="323.360112" fill="#A0522D" font-size="12" text-anchor="middle">Caph</text>
+<circle cx="116.636636" cy="254.588742" r="1.630000" fill="#DEB887"/>
+<text x="116.636636" y="269.588742" fill="#A0522D" font-size="12" text-anchor="middle">Izar</text>
+<circle cx="251.773505" cy="157.317753" r="1.730000" fill="#DEB887"/>
+<text x="251.773505" y="172.317753" fill="#A0522D" font-size="12" text-anchor="middle">Mizar</text>
+<circle cx="251.707753" cy="158.178166" r="1.000000" fill="#DEB887"/>
+<text x="251.707753" y="173.178166" fill="#A0522D" font-size="12" text-anchor="middle">Alcor</text>
+<circle cx="226.032330" cy="652.003788" r="1.000000" fill="#DEB887"/>
+<text x="226.032330" y="667.003788" fill="#A0522D" font-size="12" text-anchor="middle">Nunki B</text>
+<circle cx="622.866197" cy="600.297393" r="1.000000" fill="#DEB887"/>
+<text x="622.866197" y="615.297393" fill="#A0522D" font-size="12" text-anchor="middle">Diphda B</text>
+<circle cx="272.311085" cy="379.133982" r="1.000000" fill="#DEB887"/>
+<text x="272.311085" y="394.133982" fill="#A0522D" font-size="12" text-anchor="middle">Vega B</text>
+<circle cx="299.648731" cy="520.158648" r="1.000000" fill="#DEB887"/>
+<text x="299.648731" y="535.158648" fill="#A0522D" font-size="12" text-anchor="middle">Altair B</text>
+<circle cx="537.610857" cy="419.697300" r="1.940000" fill="#DEB887"/>
+<text x="537.610857" y="434.697300" fill="#A0522D" font-size="12" text-anchor="middle">Alpheratz</text>
+<circle cx="638.769183" cy="375.659950" r="1.990000" fill="#DEB887"/>
+<text x="638.769183" y="390.659950" fill="#A0522D" font-size="12" text-anchor="middle">Hamal</text>
+<text x="400.000000" y="770" fill="#A0522D" font-size="20" text-anchor="middle">Tonight's Sky in New York</text>
+<text x="20" y="30" fill="#A0522D" font-size="14">Location: 41.6938°N, 44.8015°E</text>
+<text x="20" y="50" fill="#A0522D" font-size="14">Date: 2003-11-28</text>
+<text x="20" y="70" fill="#A0522D" font-size="14">Time: 18:00</text>
+</svg>

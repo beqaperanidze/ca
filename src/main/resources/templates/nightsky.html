@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Generate Night Sky</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Generate Your Night Sky</h1>
+    <form action="/generate-star-map" method="post">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time">
+
+        <label for="mapStyle">Map Style:</label>
+        <select id="mapStyle" name="mapStyle">
+            <option value="default">Default</option>
+            <option value="modern">Modern</option>
+            <option value="vintage">Vintage</option>
+        </select>
+
+        <label for="colorScheme">Color Scheme:</label>
+        <select id="colorScheme" name="colorScheme">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+        </select>
+
+        <label for="size">Size:</label>
+        <select id="size" name="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+
+        <label for="showConstellations">Show Constellations:</label>
+        <input type="checkbox" id="showConstellations" name="showConstellations">
+
+        <label for="showGrid">Show Grid:</label>
+        <input type="checkbox" id="showGrid" name="showGrid">
+
+        <label for="showLabels">Show Labels:</label>
+        <input type="checkbox" id="showLabels" name="showLabels">
+
+        <label for="customMessage">Custom Message:</label>
+        <input type="text" id="customMessage" name="customMessage" maxlength="100">
+
+        <button type="submit">Generate Star Map</button>
+    </form>
+</div>
+</body>
+</html>

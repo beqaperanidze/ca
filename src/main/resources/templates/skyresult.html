@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Star Map Result</title>
+</head>
+<body>
+<div class="container">
+    <h1>Your Generated Star Map</h1>
+    <img th:src="${starMap.imageUrl}" alt="Generated Star Map">
+    <p th:text="${starMap.customMessage}"></p>
+</div>
+</body>
+</html>
